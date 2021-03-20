@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Alpha-Q {% endblock %}</h1>
+
+<form action="/listPlans" method="post">
+    <div class="row">
+        <div class="dropdown col">
+          <select name="operator" class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="operatorDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <option value="#">Select Operator</option>
+                  {% for operator in operators %}
+                  <option type="button" {% if operator['name'] == selected_operator %}selected="selected"{% endif %} class="dropdown-item" value="{{ operator['name'] }}">{{ operator['name'] }}</option>
+                  {% endfor %}
+              </div>
+          </select>
+            <script type="text/javascript">
+                 var urlmenu = document.getElementById( 'operatorDropdownButton' );
+                 urlmenu.onchange = function() {
+                      window.open( '/circles?operator='+this.options[ this.selectedIndex ].value, '_self');
+                 };
+            </script>
+        </div>
+
+    {% block circles %} {% endblock %}
+    </div>
+</form>
+
+<div class="container row" style="padding-top: 10%;">
+        {% block plans %} {% endblock %}
+</div>
+{% endblock %}

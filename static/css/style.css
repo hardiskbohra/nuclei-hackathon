@@ -1,0 +1,17 @@
+/*h1 {*/
+/*    border: 2px #eee solid;*/
+/*    color: brown;*/
+/*    text-align: center;*/
+/*    padding: 10px;*/
+/*}*/
+
+body {
+  background:url(/Users/abhinavkumar/Documents/nuclei-hack/static/images/bg.jpg) no-repeat !important;
+  /*padding-top:100px;*/
+  background-size:cover;
+}
+
+.dropdown-menu {
+    width: 300px !important;
+    height: 400px !important;
+}

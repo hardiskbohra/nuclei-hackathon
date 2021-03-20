@@ -1,0 +1,1 @@
+BSNL_PREPAID_URL = 'https://portal2.bsnl.in/myportal/tariffs.do?PREPAID'

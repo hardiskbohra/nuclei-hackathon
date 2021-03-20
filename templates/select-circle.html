@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block circles %}
+<div class="dropdown col">
+  <select name="circle" class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="PlanDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:500px,height:100px">
+          {% for circle in circles %}
+          <option {% if circle['circle_name'] == selected_circle %}selected="selected"{% endif %} class="dropdown-item" value="{{ circle['circle_name'] }}">{{ circle['circle_name'] }}</option>
+          {% endfor %}
+      </div>
+  </select>
+</div>
+
+<div class="col">
+    <button type="submit" class="btn btn-primary btn-lg">List Plans</button>
+</div>
+
+{% endblock %}
